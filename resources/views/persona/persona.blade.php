@@ -17,18 +17,18 @@
 
   <table class="table table-bordered table-sm">
                     <thead>
-                        <td>Identidad</td>
-                        <td>PrimerNombre</td>
-                        <td>SegundoNombre</td>
-                        <td>PrimerApellido</td>
-                        <td>SegundoApellido</td>
-                        <td>SexPersona</td>
-                        <td>INDcivil</td>
-                        <td>Edad</td>
-                        <td>Telefono</td>
-                        <td>Correo</td>
-                        <td>Dirpersona</td>
-                        <td>FecRegistro</td>
+                        <td>identidad</td>
+                        <td>primerNombre</td>
+                        <td>segundoNombre</td>
+                        <td>primerApellido</td>
+                        <td>segundoApellido</td>
+                        <td>sexo</td>
+                        <td>estadoCivil</td>
+                        <td>edad</td>
+                        <td>telefono</td>
+                        <td>correo</td>
+                        <td>dirpersona</td>
+                        <td>fecRegistro</td>
 
                     </thead>
                     <tbody>
@@ -50,6 +50,55 @@
       @endforeach
     </tbody>
   </table>
+  <h2>Insertar Nueva Persona</h2>
+  <form action="/INSERT_PERSONA" method="post">
+    @csrf <!-- Agrega esto para protección contra CSRF -->
+  
+    <label for="identidad">Identidad:</label>
+    <input type="text" name="PV_IDENTIDAD" required>
+
+    <label for="primerNombre">Primer Nombre:</label>
+    <input type="text" name="PV_PRIMER_NOMBRE" required>
+
+    <label for="segundoNombre">Segundo Nombre:</label>
+    <input type="text" name="PV_SEGUNDO_NOMBRE" required>
+
+    <label for="primerApellido">Primer Apellido:</label>
+    <input type="text" name="PV_PRIMER_APELLIDO" required>
+
+    <label for="segundoApellido">Segundo Apellido:</label>
+    <input type="text" name="PV_SEGUNDO_APELLIDO" required>
+
+    <label for="sexo">Sexo:</label>
+    <select name="PV_SEX_PERSONA" required>
+      <option value="M">Masculino</option>
+      <option value="F">Femenino</option>
+    </select>
+
+    <label for="estadoCivil">Estado Civil:</label>
+    <input type="text" name="PV_IND_CIVIL" required>
+
+    <label for="edad">Edad:</label>
+    <input type="number" name="PN_EDAD_PERSONA" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="PN_TELEFONO" required>
+
+    <label for="correo">Correo:</label>
+    <input type="email" name="PV_CORREO" required>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" name="PV_DIR_PERSONA" required>
+
+    <label for="fechaRegistro">Fecha de Registro:</label>
+    <input type="text" name="PV_FEC_REGISTRO" required>
+
+    <button type="submit">Insertar</button>
+  </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
