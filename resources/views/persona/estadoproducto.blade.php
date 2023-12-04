@@ -12,34 +12,34 @@
 <body>
 
 <div class="container">
-  <h2>Proveedor</h2>
-  <p>Lista de Proveedores</p>
+  <h2>Estado de Producto</h2>
+  <p>Lista de Estado de Productos</p>
 
   <table class="table table-bordered table-sm">
                     <thead>
-                        <td>nombreProveedor</td>
-                        <td>descripcionProveedor</td>
+                        <td>nombreEstado</td>
+                        <td>descripcionEstado</td>
                         
                     </thead>
                     <tbody>
-                    @foreach($ResulProveedores as $proveedor)
+                    @foreach($ResulMarcas as $Marca)
                     <tr>
-          <td class="inner-table">{{$proveedor["suppliername"]}}</td>
-          <td class="inner-table">{{$proveedor["supplierdescription"]}}</td>
+          <td class="inner-table">{{$estadoProducto["statename"]}}</td>
+          <td class="inner-table">{{$estadoProducto["descriptionState"]}}</td>
           
         </tr>
       @endforeach
     </tbody>
   </table>
-  <h2>Insertar Nuevo Proveedor</h2>
-  <form action="/insert_proveedor2" method="post">
+  <h2>Insertar Estado de Producto</h2>
+  <form action="/INSERTARESTADOPRODUCTO" method="post">
     @csrf <!-- Agrega esto para protección contra CSRF -->
   
-    <label for="nombreProveedor">Nombre Proveedor:</label>
-    <input type="text" name="PV_NOM_PROVEEDOR" required>
+    <label for="nombreEstado">Nombre Estado:</label>
+    <input type="text" name="p_NOM_ESTADO" required>
 
-    <label for="descripcionProveedor">Descripcion Proveedor:</label>
-    <input type="text" name="PV_DES_PROVEEDOR" required>
+    <label for="descripcionEstado">Descripcion Estado:</label>
+    <input type="text" name="p_DES_ESTADO" required>
 
     <button type="submit">Insertar</button>
   </form>

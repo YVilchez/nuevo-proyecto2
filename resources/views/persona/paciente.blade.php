@@ -12,34 +12,34 @@
 <body>
 
 <div class="container">
-  <h2>Proveedor</h2>
-  <p>Lista de Proveedores</p>
+  <h2>Pacientes</h2>
+  <p>Lista de Pacientes</p>
 
   <table class="table table-bordered table-sm">
                     <thead>
-                        <td>nombreProveedor</td>
-                        <td>descripcionProveedor</td>
+                        <td>observaciones</td>
+                        <td>idPersona</td>
                         
                     </thead>
                     <tbody>
-                    @foreach($ResulProveedores as $proveedor)
+                    @foreach($ResulPacientes as $paciente)
                     <tr>
-          <td class="inner-table">{{$proveedor["suppliername"]}}</td>
-          <td class="inner-table">{{$proveedor["supplierdescription"]}}</td>
+          <td class="inner-table">{{$paciente["observations"]}}</td>
+          <td class="inner-table">{{$paciente["personid"]}}</td>
           
         </tr>
       @endforeach
     </tbody>
   </table>
-  <h2>Insertar Nuevo Proveedor</h2>
-  <form action="/insert_proveedor2" method="post">
+  <h2>Insertar Nuevo Paciente</h2>
+  <form action="/INSERT_PACIENTE" method="post">
     @csrf <!-- Agrega esto para protección contra CSRF -->
   
-    <label for="nombreProveedor">Nombre Proveedor:</label>
-    <input type="text" name="PV_NOM_PROVEEDOR" required>
+    <label for="especialidad">Especialidad:</label>
+    <input type="text" name="PV_ESPECIALIDAD" required>
 
-    <label for="descripcionProveedor">Descripcion Proveedor:</label>
-    <input type="text" name="PV_DES_PROVEEDOR" required>
+    <label for="idPersona">Id Persona:</label>
+    <input type="text" name="PI_ID_PERSONA" required>
 
     <button type="submit">Insertar</button>
   </form>

@@ -50,6 +50,7 @@
       @endforeach
     </tbody>
   </table>
+  
   <h2>Insertar Nueva Persona</h2>
   <form action="/INSERT_PERSONA" method="post">
     @csrf <!-- Agrega esto para protección contra CSRF -->
